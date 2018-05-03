@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- name space -->
+<mapper namespace="f">
+
+<!-- count keyword -->
+<select id="countKeyword" parameterType="String" resultType="int">
+select count(*) from Areaformulas where Keyword like CONCAT('%',#{Keyword},'%')
+</select>	
+
+<!-- count all -->
+<select id="countAll" resultType="int">
+select count(*) from Areaformulas
+</select>
+
+<!-- get all   -->
+<select id="getAll" parameterType="map" resultType="java.util.HashMap">
+select * from Areaformulas limit #{startRow},#{pageSize}
+</select>
+
+<!-- search keyword -->
+<select id="getKeyword" parameterType="map" resultType="java.util.HashMap">
+select * from Areaformulas where Keyword like CONCAT('%',#{Keyword},'%') limit #{startRow},#{pageSize}
+</select>
+
+</mapper>

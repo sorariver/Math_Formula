@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC 
+   "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN" 
+   "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+   
+<tiles-definitions>
+<!-- put-attribute로 header/side/content/footer 를 지정해서 쓰겠다- 해당.jsp 파일들생성 -->
+<!-- 경로들을 /WEB-INF/views/tiles로 묶어서 tiles에 넣고 해도된다.  -->
+   <definition name=".main.layout" template="/WEB-INF/views/tiles/layout.jsp">
+	      <put-attribute name="header" value="/WEB-INF/views/tiles/header.jsp"/>
+	      <put-attribute name="content" value="/WEB-INF/views/formular/search.jsp"/>
+	      <put-attribute name="footer" value="/WEB-INF/views/tiles/footer.jsp"/>
+   </definition>
+
+<!-- 위의 .main.layout 를 상속받고 정의를 한다. content는 계속변하므로.. -->
+   <definition name=".main.*.*" extends=".main.layout">
+     	 <put-attribute name="content" value="/WEB-INF/views/{1}/{2}.jsp"/>
+   </definition>
+   
+
+</tiles-definitions>
+
+
