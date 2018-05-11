@@ -11,7 +11,7 @@
 	</appender>
 	
 	<!-- Application Loggers -->
-	<logger name="co.kr.math_formulas">
+	<logger name="co.kr.mathFormular">
 		<level value="info" />
 	</logger>
 	
