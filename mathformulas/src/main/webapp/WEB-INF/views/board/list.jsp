@@ -25,9 +25,9 @@
 </table>
 
 <c:if test="${map.count==0}">
-	<table>
+	<table align=center>
 		<tr>
-			<td align=center>
+			<td>
 			there is no list ...
 			</td>
 		</tr>

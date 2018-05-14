@@ -6,5 +6,6 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 <configuration>
     <mappers>
          <mapper resource="/mybatis/formulas.xml"/>
+         <mapper resource="/mybatis/board.xml"/>         
      </mappers>
 </configuration>

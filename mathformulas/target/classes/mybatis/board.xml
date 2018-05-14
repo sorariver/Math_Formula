@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- name space -->
+<mapper namespace="board">
+
+<!-- 리스트=========================================================================== -->
+<select id="getList" parameterType="map" resultType="java.util.HashMap">
+select * from board order by ref desc,re_step asc limit #{startRow},#{endRow}
+</select>
+
+<!-- 글쓰기=========================================================================== -->
+<insert id="insertArticle" parameterType="model.dto.BoardDto">
+insert into board(writer,email,subject,passwd,regdate,ref,re_step,re_level,content,ip) 
+values(#{writer},#{email},#{subject},#{passwd},NOW(),#{ref},#{re_step},#{re_level},#{content},#{ip})
+</insert>
+
+<!-- 최대글번호 얻기=====================================================================  -->
+<select id="maxNum" resultType="int">
+select max(num) from board
+</select>
+
+<!-- 답글이면 답글넣을 위치확보=============================================================   -->
+<update id="reStep" parameterType="java.util.HashMap">
+update board set re_step=re_step+1 where ref=#{ref} and re_step>#{re_step}
+</update>
+
+<!-- 글개수 카운트=======================================================================  -->
+<select id="getArticleCount" resultType="Integer">
+select count(*) from board
+</select>
+
+<!-- 조회수증가=========================================================================  -->
+<update id="plusReadcount" parameterType="int">
+update board set readcount=readcount+1 where num=#{num}
+</update>
+
+<!-- 글내용보기=========================================================================  -->
+<select id="getArticle" parameterType="int" resultType="model.dto.BoardDto">
+select * from board where num=#{num}
+</select>
+
+
+<!-- 글수정과 글삭제를 위한 암호얻기  password의 resultType=String===================================== --> 
+<select id="findpwd" parameterType="String" resultType="String">
+select passwd from board where num=#{num}
+</select>
+
+<!-- 글수정============================================================================= -->
+<update id="updateBoard" parameterType="model.dto.BoardDto">
+update board set writer=#{writer},email=#{email},subject=#{subject},content=#{content} where num=#{num}
+</update>
+
+
+<!-- 글삭제============================================================================= -->
+<delete id="deleteArticle" parameterType="int">
+delete from board where num=#{num}
+</delete>
+
+<!-- 리스트============================================================================= -->
+</mapper>
