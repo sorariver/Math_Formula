@@ -4,30 +4,29 @@
 <%@include file="../tiles/common.jsp"%>
 <%@page import="java.util.*"%>
 
-<html>
-<head>
-<script type="text/javascript" src="//code.jquery.com/jquery-3.2.1.min.js"></script>
-<link rel="stylesheet" type="text/css"  href="resources/css/Fomular.css">
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>Insert title here</title>
-</head>
-<body>
+<!-- <html> -->
+<!-- <head> -->
+<!-- <script type="text/javascript" src="//code.jquery.com/jquery-3.2.1.min.js"></script> -->
+<!-- <link rel="stylesheet" type="text/css"  href="resources/css/Fomular.css"> -->
+<!-- <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR"> -->
+<!-- <title>Insert title here</title> -->
+<!-- </head> -->
+<!-- <body> -->
 
- <form method=get action="main.do?" style='display:inline; align:center; width:700; height:400;'>
-	<input type=text id="Keyword" name="Keyword" placeholder="어떤 도형의 넓이를 알고싶으세요?" size=60 style="padding: 20px 10px; line-height: 10px; margin:5px; width:700; height:60;">
+
+ <form method=get action="main.do?" align="center">
+	<input type=text id="Keyword" name="Keyword" placeholder="어떤 도형의 넓이를 알고싶으세요?" style="width:800px; padding: 20px 10px; line-height: 10px;">
 	<input type=submit value="go" hidden="true" >
  </form>
 
 
 <br>
 <c:if test="${initial==0}">
-Welcome to visit ⁽⁽٩(๑˃̶͈̀ ᗨ ˂̶͈́)۶⁾⁾ 
-<table align=center>
+<!-- Welcome to visit ⁽⁽٩(๑˃̶͈̀ ᗨ ˂̶͈́)۶⁾⁾  -->
+<table align=center style="width:100px;">
 <tr>
 	<td>
-		<a href="rectangle.do" >
-	 		<img src="${myContextPath}/resources/shape/F_rectangle.png" alt="사각형">
-	 	</a>
+		<a href="rectangle.do" ><img src="${myContextPath}/resources/shape/F_rectangle.png" alt="사각형"></a>
 	</td>
 	<td>
 		 <a href="round.do" ><img src="${myContextPath}/resources/shape/F_round.png" alt="원"></a>
@@ -96,5 +95,5 @@ $(function(){
 			</c:if>
 </span>
 </div>
-</body>
-</html>
+<!-- </body> -->
+<!-- </html> -->

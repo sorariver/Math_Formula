@@ -150,6 +150,8 @@ public class FormularController
     float result = (float)(0.5D * Float.parseFloat(b) * Float.parseFloat(h));
 
     System.out.println(result);
+    model.addAttribute("b", b);
+    model.addAttribute("h", h);
     model.addAttribute("result", Float.valueOf(result));
 
     return ".main.basic_shape.triangle"; }

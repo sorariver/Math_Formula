@@ -11,7 +11,7 @@
 </head>
 <body>
 <div align="center">
-<img src="resources/imgs/content.png" width="400"/>
+<img src="resources/imgs/content.png" width="100px"/>
 </div>
 	<table border=1 align=center cellpadding=10 cellspacing=0 bordercolor=#9ED0F8 width=700>
 		<tr>

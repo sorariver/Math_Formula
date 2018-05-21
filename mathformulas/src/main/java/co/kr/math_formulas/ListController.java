@@ -164,18 +164,11 @@ public class ListController {
 			@RequestMapping(value="/edit.do", method=RequestMethod.GET)
 			public ModelAndView userEdit(String num,String msg,Model model) { //Content.jsp 에서 글수정갈 때, <a href="edit.do?num=${boardDto.num}">이렇게 num parameter값이 넘어가서 그걸받음. 
 				
-				//System.out.println("num찍기!!!!!"+num+"Integer.parseInt(num)"+Integer.parseInt(num));
 				System.out.println(num);
 				System.out.println(msg);
 				if(msg==null) {
 					model.addAttribute("msg",msg);
 				}
-				
-				//getArticle
-				
-//				String content=dto.getContent();이거바꾸기..
-//				content=content.replace("\n","<br>");
-//				model.addAttribute("content",content);	 	
 				
 				BoardDto boardDto=(BoardDto)sqlSession.selectOne("board.getArticle",Integer.parseInt(num));
 
@@ -184,33 +177,24 @@ public class ListController {
 				//					     edit.jsp . key    .value
 			}
 			
-		//글수정insert===========================================================================================================
+			//글수정insert===========================================================================================================
 			@RequestMapping(value="/edit.do",method=RequestMethod.POST)
 			public String updateBoard(@ModelAttribute("boardDto") BoardDto boardDto,String num,String inputpwd,Model model) throws NamingException,IOException{
 				
-				String dbpwd=sqlSession.selectOne("board.findpwd",num);
-				
-				System.out.println("dbpwd,inputpwd보기"+dbpwd+inputpwd);
-			
-				System.out.println("boardDto보기"+boardDto.getWriter()+boardDto.getSubject()+boardDto.getEmail()+boardDto.getNum());
-				
+				String dbpwd=sqlSession.selectOne("board.findpwd",num); //DBpwd를 찾는다 - 아래에서 비교를 위해 
 				if(inputpwd.equals(dbpwd)){
-					sqlSession.update("board.updateBoard",boardDto);
-						
+					sqlSession.update("board.updateBoard",boardDto);	
 				}else {
 					System.out.println("200번라인 실행?");
 					model.addAttribute("msg","oppps, wrong password ;-(");
 					model.addAttribute("num",num);
-					
 					 return ".main.board.edit";
 				}
-			
-				
 				return "redirect:list.do";
 			}
 			
 			
-			//글삭제
+			//글삭제================================================================================================================
 			@RequestMapping("/delete.do")
 			public String deleteBoard(String num,String msg,Model model) throws NamingException,IOException{
 				

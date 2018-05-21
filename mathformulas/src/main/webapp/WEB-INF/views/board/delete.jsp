@@ -20,17 +20,7 @@ function deleteSave(){
 
 </head>
 <body>
-<c:if test="${empty sessionScope.id}">
-<script>
-	alert("you can't delete the post without login >>");
-	
-    location.href="login.do";
-// HTML	<meta http-equiv="Refresh" content="0;url=${ctxpath}/member/main.do"/>
 
-	//history.go(-1);
-</script>
-	
-</c:if>
 
 <center>${msg}</center>
 <div align="center">

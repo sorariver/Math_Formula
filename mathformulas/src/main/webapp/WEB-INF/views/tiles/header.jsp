@@ -3,12 +3,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@include file="../tiles/common.jsp"%>
 
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
+<!-- <html> -->
+<!-- <head> -->
+<!-- <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> -->
+<!-- <title>Insert title here</title> -->
+<!-- </head> -->
+<!-- <body> -->
 <%--
 	<h2 align="center">
 		<a href="/tilestest/" style="text-decoration:none;">
@@ -18,20 +18,21 @@
 	</h2>
 --%>
 
-<table border=0 style="width:100%; min-width:700px; border-collapse:collapse;">
+<!-- <table border=0 style="width:100%; padding:0; border-collapse:collapse;"> -->
 	<tr>
-		<td align="left"><a href="/mathformulas/" style="text-decoration:none;">
-		<img src="${myContextPath}/resources/shape/logo.png" alt="로고">
-		</a></td>
-		
-		<td align="right">
-			<a href="list.do">게시판</a>&nbsp;&nbsp;
-			<a href="insertForm.do">회원가입</a>&nbsp;&nbsp;
-			<a href="login.do">로그인</a>&nbsp;&nbsp;
+		<td align="center" style="padding: 0;">
+			<a href="/mathformulas/" style="text-decoration: none;"> 
+				<img src="${myContextPath}/resources/shape/logo.png" alt="로고" width=200px>
+			</a>
 		</td>
-	</tr>	
-</table>
+	</tr>
+	<tr>
+		<td align="right"><a href="list.do" style="padding: 0;"><img
+				src="${myContextPath}/resources/imgs/board.png" alt="게시판"
+				width="50px"></a>&nbsp;&nbsp;</td>
+	</tr>
+<!-- </table> -->
  
  	
-</body>
-</html>
+<!-- </body> -->
+<!-- </html> -->

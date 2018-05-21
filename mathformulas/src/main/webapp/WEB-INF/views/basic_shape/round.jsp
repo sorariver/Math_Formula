@@ -34,7 +34,6 @@
 		</td>
 
 			<td><img src="${myContextPath}/resources/shape/F_round.png" id="shape" alt="¿ø"></td>
-<!-- 			<td><div id="circle"></div></td> -->
 			<td align=cetner>
 					<div><input type="text" placeholder="r" name="r">
 					<input type="submit" class=button value="°è»ê" style="margin-left:5px;"></div>

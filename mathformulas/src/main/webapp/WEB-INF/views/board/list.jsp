@@ -9,15 +9,15 @@
 </head>
 <body>
 <div align="center">
-<img src="resources/imgs/list.png" width="400"/>
+<img src="resources/imgs/opinion.png" width="100px"/>
 </div>
-<center>
-<h4>(TOTAL:${map.count})</center>
+<%-- <center> --%>
+<%-- <h4>(TOTAL:${map.count})</center> --%>
 
 <table align=center width=700>
 	<tr>
 		<td align=right>
-			<a href="writeForm.do">write my story♥</a> 
+			<a href="writeForm.do"><img src="resources/imgs/pencil.png" width="20px"/></a> 
 			<%-- contextpath알아보기 : <%=request.getContextPath()%> => /14_MVC 
 			   따라서, 위의 a href는 이런 전체주소가 된다.  http://localhost:9000/14_MVC/ch19/writeForm.do --%>
 		</td>
