@@ -5,17 +5,17 @@
 
 <h4>Main function</h4>
 <pre>1. Main page - Search bar
-Find a shape with a keyword. if there are no matched shapes. a list of all shapes will appear.
+Find a shape with a keyword. if there is no matched shape, a list of shapes will appear.
       Validation point 
       1. The keyword should not contain special symbols.
-      2. limit of characters.
+      2. limit on number of characters.
         
 
 2. Calculation page
-The page shows its own formula and the shape. The user allows to key in numerical value.
+The page shows the shape and its formula. The user is allowed to key in numerical value.
       validation point
-      1. The given number should not be negative.
-      2. The only number allowed.</pre>
+      1. The input number should not be negative.
+      2. Only number allowed.</pre>
              
 
 
