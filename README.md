@@ -29,3 +29,5 @@ ListController.java        - every function for Board.</pre>
 <h4>Design</h4>
 <pre>Logo design by autumntree92.
 Shapes are designed on https://vectr.com/ by autumntree92.</pre>
+
+Jenkins connected
